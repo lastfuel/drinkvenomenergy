@@ -17,6 +17,10 @@ body {
     background-size: 10%;
   }
   
+  body.black-background {
+    background: #000;
+  }
+  
   body.original {
     background: radial-gradient(circle at top, rgba(177, 29, 29, 1), #000000);
   }
@@ -29,16 +33,12 @@ body {
     background: radial-gradient(circle at top, rgba(243, 206, 69, 1), #000000);
   }
   
-  body.variety-pack {
-    background: radial-gradient(circle at top, rgba(177, 29, 29, 1), rgba(204, 86, 24, 1), rgba(243, 206, 69, 1), #000000);
-  }
-  
   header {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px;
+    width:80%;
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    justify-content: space-between;
   }
   
   #logo {
@@ -155,9 +155,8 @@ body {
   }
   
   #buy-button {
-    height: 64px;
+    height: 60px;
     width: 256px;
-    padding: 10px 20px;
     border: 2px solid white;
     background: none;
     color: white;
@@ -170,24 +169,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
   }
   
   #buy-button:hover {
     background: white;
     color: black;
-    cursor: pointer;
-  }
-  
-  
-  #amzn-buy-now {
-    width: 256px; /* Match the width of your custom button */
-    height: 64px; /* Match the height of your custom button */
-  }
-  
-  #amzn-buy-now iframe {
-    width: 100% !important; /* Override Amazon's width */
-    height: 100% !important; /* Override Amazon's height */
   }
   
   .indicator-container {
@@ -200,8 +186,8 @@ body {
   }
   
   .indicator-dot {
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
     border: 2px solid white;
     background: none;
     cursor: pointer;
@@ -209,6 +195,35 @@ body {
   
   .indicator-dot.active {
     background: white;
+  }
+  
+  .top-nav {
+    display: flex;
+    gap: 10px;
+    z-index: 3;
+  }
+  
+  .top-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .top-nav li {
+    display: inline;
+  }
+  
+  .top-nav a {
+    color: #ffffff75;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+  }
+  
+  .top-nav a:hover {
+    text-decoration: underline;
   }
   
   .social-icons {
@@ -221,8 +236,8 @@ body {
   }
   
   .social-icons a {
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     border: 2px solid white;
     background: none;
     color: white;
@@ -239,61 +254,27 @@ body {
     background: white;
     color: black;
   }
-  
-  .interactive-dots .dot {
-    width: 8px;
-    height: 8px;
-    background: white;
-    border-radius: 50%;
-    position: absolute;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+
+  .content-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    overflow-y: auto;
+    max-height: 80vh;
   }
-  
-  .interactive-dots .dot:hover {
-    transform: scale(1.2);
-  }
-  
-  .dot[data-content="Nutrition Facts"] { top: 20%; left: 30%; }
-  .dot[data-content="Ingredients"] { top: 50%; left: 70%; }
-  .dot[data-content="Key Features"] { top: 80%; left: 50%; }
-  .dot[data-content="More Key Features"] { top: 40%; left: 80%; }
-  .dot[data-content="Additional Key Features"] { top: 60%; left: 20%; }
-  
-  .popup {
-    position: absolute;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
+
+  .hidden {
     display: none;
-    z-index: 4;
-    font-size: 14px;
   }
   
-  .star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    opacity: 0;
-    border-radius: 50%;
-    animation: star-animation 8s infinite;
+  .fade {
+    animation: fadeIn 1s forwards;
   }
   
-  @keyframes star-animation {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px) scale(0.5);
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(20px) scale(0.5);
-    }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
   
   @media (max-width: 768px) {
@@ -328,4 +309,3 @@ body {
       margin: 5px 0;
     }
   }
-  

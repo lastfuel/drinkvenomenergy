@@ -34,11 +34,13 @@ body {
   }
   
   header {
-    width:80%;
+    width: 80%;
     display: flex;
     padding: 16px;
     align-items: center;
     justify-content: space-between;
+    position: absolute;
+    top: 0;
   }
   
   #logo {
@@ -279,14 +281,24 @@ body {
   
   @media (max-width: 768px) {
     .indicator-container {
-      bottom: 180px;
+      bottom: 188px;
       width: 100%;
       left: auto;
       justify-content: center;
     }
+
+    .can img {
+      height: 75% !important; 
+    }
+
+    .can {
+      height: 75% !important; 
+    }
+
+    
   
     .controls {
-      bottom: 210px;
+      bottom: 88px;
       width: 100%;
       justify-content: center;
       margin: 1rem 0;
@@ -299,7 +311,7 @@ body {
     }
   
     .social-icons {
-      bottom: 40px;
+      bottom: 20px;
       width: 100%;
       right: auto;
       justify-content: center;
